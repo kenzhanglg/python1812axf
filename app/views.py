@@ -33,14 +33,19 @@ def home(request):
 
     return render(request,'home/home.html',context=response_dir)
 
-def market(request,categoryid=104749,):
+# def market(request,categoryid=104749,):
+def market(request):
+
     foodtypes = Foodtype.objects.all()
     #商品信息
     # goods_list = Foodtype.objects.all()[0:10]
     #默认打开热销榜
     #点击左侧分类，显示对应分类商品信息  传参数
-    goods_list = Goods.objects.filter(categoryid=categoryid)
+    # goods_list = Goods.objects.filter(categoryid=categoryid)
 
+    index= int(request.COOKIES.get('index','0'))
+    categoryid = foodtypes[index].typeid
+    goods_list = Goods.objects.filter(categoryid=categoryid)
     response_str = {
         'foodtypes':foodtypes,
         'goods_list':goods_list,

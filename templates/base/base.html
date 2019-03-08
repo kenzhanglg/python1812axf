@@ -42,7 +42,7 @@
                     <div class="name">首页</div>
                 </div>
             </a>
-            <a href="{% url 'axf:marketbase' %}" class="market">
+            <a href="{% url 'axf:market' %}" class="market">
                 <div class="item">
                     <div class="img"><span></span></div>
                     <div class="name">闪购超市</div>
@@ -64,7 +64,7 @@
     {% endblock %}
 {% endblock %}
 
-<script src="{% static 'base/js/jquery.min.js' %}"></script>
+<script src="{% static 'base/js/jquery.js' %}"></script>
 <script src="{% static 'base/js/base.js' %}"></script>
 <script src="{% static 'base/js/jquery.cookie.js' %}"></script>
 {% block extjs %}

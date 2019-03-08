@@ -42,10 +42,12 @@ footer .market .name {
     top: 0.6rem;
     display: none;
 }
-.market .type-slider ul .active  {
+.market .type-slider ul .active span{
     display: block;
 }
 .market .type-slider ul li a{}
+
+
 
 /* 顶部通栏*/
 .market  nav{

@@ -15,9 +15,9 @@
     <div class="type-slider">
         <ul>
             {% for foodtype in foodtypes %}
-                <li>
-                    <span></span>
-                    <a href="{% url 'axf:market' foodtype.typeid %}">
+                <li >
+                    <span ></span>
+                    <a href="{% url 'axf:market' %}">
                         {% if forloop.counter == foodtype.typesort %}
                         {{ foodtype.typename }}
                         {% endif %}
@@ -26,17 +26,19 @@
             {% endfor %}
         </ul>
     </div>
+
     {#导航#}
     <nav>
         <ul>
-            <li>
-                <span>
-                    全部类型
-                    <i class="glyphicon glyphicon-chevron-up"></i>
-                </span>
-
+            <li id="category-bt">
+                <a href="">
+                    <span>
+                        全部类型
+                        <i class="glyphicon glyphicon-chevron-up"></i>
+                    </span>
+                </a>
             </li>
-            <li>
+            <li id="sort-bt">
                 <span>
                     综合排序
                     <i class="glyphicon glyphicon-chevron-up"></i>
@@ -44,6 +46,7 @@
             </li>
         </ul>
     </nav>
+
     {#主体内容#}
     <div class="main-content">
         <div class="content-wrapper">
@@ -69,7 +72,6 @@
                                         {{ goods.marketprice }}</span>
                                 </p>
                             </div>
-
                         </a>
                         <div class="bt-wrapper">
 
@@ -85,5 +87,5 @@
 {% endblock %}
 
 {% block extjs %}
-    <link rel="stylesheet" href="{% static 'market/js/market.js' %}">
+    <script src="{% static 'market/js/market.js' %}"></script>
 {% endblock %}
