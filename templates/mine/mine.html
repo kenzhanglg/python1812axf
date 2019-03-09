@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block extcss %}
+
     <link rel="stylesheet" href="{% static 'mine/css/mine.css' %}">
 {% endblock %}
 
@@ -16,21 +17,116 @@
             <img src="{% static 'mine/img/axf.png' %}" alt="">
         </div>
         <div class="user-content">
-            <p></p>
+            <p>
+                <span class="glyphicon glyphicon-user"></span>
+                <a href="#">未登录</a>
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-th-list"></span>
+                等级: 无等级
+            </p>
+            <a href="#" class="register">注册</a>
         </div>
 
     </div>
 
-    <div class="collect"></div>
+    <div class="collect">
+        <span class="glyphicon glyphicon-fire "></span>
+        <i>商品收藏</i>
+    </div>
 
-    <div class="other"></div>
+    <div class="other">
+        <section class="my">
+            <span>我的订单</span>
+            <a href="#">查看全部订单 <i class="glyphicon glyphicon-chevron-right"></i></a>
+        </section>
 
+        <section>
+            <ul>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-usd"></dt>
+                        <dd>待付款</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-envelope"></dt>
+                        <dd>待收货</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-pencil"></dt>
+                        <dd>待评价</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-retweet"></dt>
+                        <dd>退款/售后</dd>
+                    </dl>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
+        <section>
+            <ul>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-credit-card"></dt>
+                        <dd>优惠券</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-import"></dt>
+                        <dd>收货地址</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-phone-alt"></dt>
+                        <dd>客服/反馈</dd>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <dl>
+                        <dt class="glyphicon glyphicon-asterisk"></dt>
+                        <dd>关于我们</dd>
+                    </dl>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+
+        <section class="quit">
+
+                <a href="#">退出登录</a>
+
+        </section>
+
+    </div>
 </div>
-
 
 {% endblock %}
 
 {% block extjs %}
-    <link rel="stylesheet" href="{% static 'mine/js/mine.js' %}">
+    <script src="{% static 'mine/js/mine.js' %}"></script>
 {% endblock %}
