@@ -1,6 +1,11 @@
-from django.shortcuts import render
+import hashlib
+import random
+import time
+
+from django.core.cache import cache
+from django.shortcuts import render, redirect
 from app.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, \
-    Goods
+    Goods, User
 
 
 def home(request):
@@ -84,4 +89,59 @@ def cart(request):
     return render(request,'cart/cart.html')
 
 def mine(request):
-    return render(request,'mine/mine.html')
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = None
+    if userid:
+        user = User.objects.get(pk = userid)
+    return render(request,'mine/mine.html',context={'user':user})
+
+def genrate_token():
+    temp = str(time.time()) + str(random.random())
+    md5 = hashlib.md5()
+    md5.update(temp.encode('utf-8'))
+    return md5.hexdigest()
+
+def genrate_password(param):
+    md5 = hashlib.md5()
+    md5.update(param.encode('utf-8'))
+    return md5.hexdigest()
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'mine/register.html')
+
+    elif request.method == 'POST':
+        user = User()
+        user.email = request.POST.get('email')
+        user.password = genrate_password(request.POST.get('password'))
+        user.name = request.POST.get('name')
+        user.save()
+
+        token = genrate_token()
+
+        cache.set(token,user.id,60*60*24*3)
+
+        request.session['token'] = token
+
+        return redirect('axf:mine')
+
+def login(request):
+    if request.method == 'GET':
+        return render(request,'mine/login.html')
+    elif request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        users = User.objects.filter(email=email).filter(password=password)
+        if users.exists():
+            user = users.first()
+            token = genrate_token()
+            cache.set(token, user.id, 60 * 60 * 24 * 3)
+            request.session['token'] = token
+            return redirect('axf:mine')
+        else:
+            return render(request, 'mine/login.html')
+
+def logout(request):
+    request.session.flush()
+    return redirect('axf:mine')

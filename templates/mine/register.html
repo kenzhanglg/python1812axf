@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+    注册
+{% endblock %}
+
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'mine/css/register.css' %}">
+{% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'mine/js/register.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="register">
+        <form action="{% url 'axf:register' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <span class="input-group-addon">帐号</span>
+                <input type="text" class="form-control"
+                       placeholder="帐号长度为6-12个字符" name="email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">密码</span>
+                <input type="password" class="form-control"
+                       placeholder="密码长度为6-12个字符"
+                       name="password">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">验证</span>
+                <input type="password" class="form-control"
+                       placeholder="密码长度为6-12个字符">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">昵称</span>
+                <input type="text" class="form-control" name="name">
+            </div>
+{#            <div class="input-group">#}
+{#                <span class="input-group-addon"#}
+{#                      id="basic-addon1">电话</span>#}
+{#                <input type="text" class="form-control"#}
+{#                       aria-describedby="basic-addon1">#}
+{#            </div>#}
+{#            <div class="input-group">#}
+{#                <span class="input-group-addon"#}
+{#                      id="basic-addon1">地址</span>#}
+{#                <input type="text" class="form-control"aria-describedby="basic-addon1">#}
+{#            </div>#}
+            <input type="submit" value="注册" id="subButton">
+        </form>
+
+    </div>
+
+{% endblock %}
+
