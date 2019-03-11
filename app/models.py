@@ -116,7 +116,7 @@ class Goods(models.Model):
         db_table = 'axf_goods'
 
 
-#登录
+#用户
 class User(models.Model):
     #邮箱
     email = models.CharField(max_length=50,unique=True)
@@ -131,3 +131,18 @@ class User(models.Model):
     class Meta:
         db_table = 'axf_user'
 
+# 购物车 模型类
+class Cart(models.Model):
+    # 用户[ 添加的这个商品属于哪个用户]
+    user = models.ForeignKey(User)
+    # 商品[添加哪个商品]
+    goods = models.ForeignKey(Goods)
+    # 选择数量
+    number = models.IntegerField()
+    # 是否选中
+    isselect = models.BooleanField(default=True)
+    #是否删除
+    isdelete = models.BooleanField(default=False)
+
+    class Meta():
+        db_table = 'axf_cart'

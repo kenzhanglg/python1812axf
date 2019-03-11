@@ -17,39 +17,63 @@
     <div class="register">
         <form action="{% url 'axf:register' %}" method="post">
             {% csrf_token %}
-            <div class="input-group">
-                <span class="input-group-addon">帐号</span>
-                <input type="text" class="form-control"
-                       placeholder="帐号长度为6-12个字符" name="email">
+
+
+            <div class="form-group has-feedback" id="email">
+                <div class="input-group">
+                    <span class="input-group-addon">邮箱</span>
+                    <input type="text" class="form-control"
+                           placeholder="帐号长度为6-12个字符" name="email"
+                           id="email-t"
+                           data-toggle="popover" data-placement="bottom"
+                           data-content="格式不正确">
+                </div>
+                <span class="glyphicon form-control-feedback"
+                      aria-hidden="true"></span>
             </div>
-            <div class="input-group">
-                <span class="input-group-addon">密码</span>
-                <input type="password" class="form-control"
-                       placeholder="密码长度为6-12个字符"
-                       name="password">
+
+
+             <div class="form-group has-feedback" id="password">
+                <div class="input-group">
+                    <span class="input-group-addon">密码</span>
+                    <input type="password" class="form-control"
+                           placeholder="6~10位数密码" name="password">
+                </div>
+                <span class="glyphicon form-control-feedback"
+                      aria-hidden="true"></span>
             </div>
-            <div class="input-group">
-                <span class="input-group-addon">验证</span>
-                <input type="password" class="form-control"
-                       placeholder="密码长度为6-12个字符">
+
+
+            <div class="form-group has-feedback" id="password-d">
+                <div class="input-group">
+                    <span class="input-group-addon">确认密码</span>
+                    <input type="password" class="form-control"
+                           placeholder="6~10位数密码" id="password-t"
+                           tabindex="0" data-toggle="popover"
+                           data-trigger="focus" data-placement="bottom"
+                           data-content="两次密码不一致">
+                </div>
+                <span class="glyphicon form-control-feedback"
+                      aria-hidden="true"></span>
             </div>
-            <div class="input-group">
-                <span class="input-group-addon">昵称</span>
-                <input type="text" class="form-control" name="name">
+
+
+
+            <div class="form-group has-feedback" id="name">
+                <div class="input-group">
+                    <span class="input-group-addon">昵称</span>
+                    <input type="text" class="form-control"
+                           placeholder="3~10位数(昵称)" name="name">
+                </div>
+                <span class="glyphicon form-control-feedback"
+                      aria-hidden="true"></span>
             </div>
-{#            <div class="input-group">#}
-{#                <span class="input-group-addon"#}
-{#                      id="basic-addon1">电话</span>#}
-{#                <input type="text" class="form-control"#}
-{#                       aria-describedby="basic-addon1">#}
-{#            </div>#}
-{#            <div class="input-group">#}
-{#                <span class="input-group-addon"#}
-{#                      id="basic-addon1">地址</span>#}
-{#                <input type="text" class="form-control"aria-describedby="basic-addon1">#}
-{#            </div>#}
-            <input type="submit" value="注册" id="subButton">
+
+
+            {#            <input type="submit" value="注册" id="subButton">#}
         </form>
+
+        <button id="subButton">注册</button>
 
     </div>
 

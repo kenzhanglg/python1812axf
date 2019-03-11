@@ -13,7 +13,6 @@ $(function () {
         $('.type-slider li:first').addClass('active')
     }
 
-
     $('.type-slider li').click(function () {
         // $(this).addClass('active')
         // localStorage.setItem('index',$(this).index())
@@ -80,6 +79,28 @@ $(function () {
 
         categoryViewHide()
         categoryShow = false
+    })
+
+    //////////////////////////
+    //隐藏处理
+    $('.bt-wrapper>.glyphicon-minus').hide()
+    $('.bt-wrapper>i').hide()
+
+    //点击操作
+    $('.bt-wrapper>.glyphicon-plus').click(function () {
+        request_data = {
+            'goodsid':$(this).attr('data-goodsid')
+        }
+
+        $.get('/axf/addcart/',request_data,function (response) {
+            console.log(response)
+            if (response.status == -1){
+                //未登录
+                $.cookie('back', 'market', {expires: 3, path: '/'})
+                window.open('/axf/login/','_self')
+            }
+        })
+
     })
 
 

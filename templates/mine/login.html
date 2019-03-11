@@ -28,11 +28,17 @@
                 <input type="text" class="form-control"
                        placeholder="帐号名/手机号码/邮箱" name="email">
             </div>
+            <p style="color: red">
+                {{ user_err }}
+            </p>
             <div class="input-group">
                 <span class="input-group-addon">密码</span>
                 <input type="password" class="form-control"
                        placeholder="6位数密码" name="password">
             </div>
+            <p style="color: red">
+                {{ user_prr }}
+            </p>
 
             <input type="submit" value="登录" id="subButton">
 
