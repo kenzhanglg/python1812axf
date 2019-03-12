@@ -17,5 +17,14 @@ urlpatterns = [
 
     url(r'^checkemail/$', views.checkemail, name='checkemail'),  # 账号验证
     url(r'^addcart/$', views.addcart, name='addcart'),  # 添加到购物车中
+    url(r'^subcart/$', views.subcart, name='subcart'),  # 删除购物车中
+
+    url(r'^changecartselect/$', views.changecartselect,
+        name='changecartselect'),  # 购物车商品选中状态
+    url(r'^changecartall/$', views.changecartall, name='changecartall'),  # 全选/取消全选
+
+    url(r'^generateorder/$', views.generateorder, name='generateorder'),    # 生成订单
+    url(r'orderlist/$', views.orderlist, name='orderlist'), # 订单列表
+    url(r'^orderdetail/(?P<identifier>[\d.]+)/$', views.orderdetail, name='orderdetail'),  # 订单详情
 
 ]

@@ -1,0 +1,3 @@
+$(function () {
+    $('.orderlist').width(innerWidth)
+})

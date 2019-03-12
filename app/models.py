@@ -30,7 +30,7 @@ class Shop(BaseModel):
     class Meta:
         db_table = 'axf_shop'
 
-#axf_mainshow(trackid,name,img,categoryid,brandname,img1,childcid1,productid1,longname1,price1,marketprice1,img2,childcid2,productid2,longname2,price2,marketprice2,img3,childcid3,productid3,longname3,price3,marketprice3)
+
 #商品类表  模型类
 class Mainshow(models.Model):
     trackid = models.CharField(max_length=10)
@@ -76,10 +76,7 @@ class Foodtype(models.Model):
     class Meta:
         db_table = 'axf_foodtypes'
 
-# insert into axf_goods
-# (productid,productimg,productname,productlongname,isxf,pmdesc,specifics,price,marketprice,categoryid,childcid,childcidname,dealerid,storenums,productnum)
-# values
-# ("11951","http://img01.bqstatic.com/upload/goods/000/001/1951/0000011951_63930.jpg@200w_200h_90Q","","乐吧薯片鲜虾味50.0g",0,0,"50g",2.00,2.500000,103541,103543,"膨化食品","4858",200,4);
+
 class Goods(models.Model):
     # 商品ID
     productid = models.CharField(max_length=10)
@@ -131,6 +128,7 @@ class User(models.Model):
     class Meta:
         db_table = 'axf_user'
 
+
 # 购物车 模型类
 class Cart(models.Model):
     # 用户[ 添加的这个商品属于哪个用户]
@@ -146,3 +144,31 @@ class Cart(models.Model):
 
     class Meta():
         db_table = 'axf_cart'
+
+
+class Order(models.Model):
+    # 用户
+    user = models.ForeignKey(User)
+    # 订单号
+    identifier = models.CharField(max_length=256)
+    # 状态
+    # 0 未付款
+    # 1 已付款，未发货
+    # 2 已发货，未收货
+    # 3 已收货，未评级
+    # 4 已评价
+    # -1 过期.
+    status = models.IntegerField(default=0)
+    # 创建时间
+    createtime = models.DateTimeField(auto_now_add=True)
+    #更新时间
+    updatetime = models.DateTimeField(auto_now=True)
+
+
+class OrderGoods(models.Model):
+    # 订单
+    order = models.ForeignKey(Order)
+    # 商品
+    goods = models.ForeignKey(Goods)
+    # 数量
+    number = models.IntegerField()

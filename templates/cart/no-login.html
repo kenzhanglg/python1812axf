@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    购物车无登录转登录
+{% endblock %}
+
+{% block content %}
+    <div class="no-login">
+        <a href="{% url 'axf:login' %}">
+            请先登录后操作
+        </a>
+    </div>
+{% endblock %}
