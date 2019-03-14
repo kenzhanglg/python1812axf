@@ -1,7 +1,6 @@
 import hashlib
 import random
 import time
-
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -109,10 +108,21 @@ def cart(request):
 def mine(request):
     token = request.session.get('token')
     userid = cache.get(token)
-    user = None
+    response_data = {
+        'user' : None,
+
+    }
     if userid:
         user = User.objects.get(pk = userid)
-    return render(request,'mine/mine.html',context={'user':user})
+        response_data['user'] = user
+        orders = user.order_set.all()
+        # 待付款
+        response_data['waitpay'] = orders.filter(status=0).count()
+        # 待发货
+        response_data['paydone'] = orders.filter(status=1).count()
+
+    return render(request,'mine/mine.html',context={
+        'response_data':response_data})
 
 def genrate_token():
     temp = str(time.time()) + str(random.random())

@@ -41,6 +41,7 @@
     <div class="other">
         <section class="my">
             <span>我的订单</span>
+            <span class="badge">{{ waitpay }}</span>
             <a href="{% url 'axf:orderlist' %}">查看全部订单 <i
                     class="glyphicon
             glyphicon-chevron-right"></i></a>
@@ -49,23 +50,29 @@
         <section>
             <ul>
                 <li>
-                    <a href="">
-                    <dl>
-                        <dt class="glyphicon glyphicon-usd"></dt>
-                        <dd>待付款</dd>
-                    </dl>
+                    <a href="#">
+                        <dl class="item">
+                            <dt >
+                                <span class="glyphicon glyphicon-usd"></span>
+                                <span class="badge">{{ waitpay }}</span>
+                            </dt>
+                            <dd>待付款</dd>
+                        </dl>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                    <dl>
-                        <dt class="glyphicon glyphicon-envelope"></dt>
+                    <a href="#">
+                    <dl class="item">
+                        <dt >
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <span class="badge">{{ paydone }}</span>
+                        </dt>
                         <dd>待收货</dd>
                     </dl>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-pencil"></dt>
                         <dd>待评价</dd>
@@ -73,7 +80,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-retweet"></dt>
                         <dd>退款/售后</dd>
@@ -86,7 +93,7 @@
         <section>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-credit-card"></dt>
                         <dd>优惠券</dd>
@@ -94,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-import"></dt>
                         <dd>收货地址</dd>
@@ -102,7 +109,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-phone-alt"></dt>
                         <dd>客服/反馈</dd>
@@ -110,7 +117,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#">
                     <dl>
                         <dt class="glyphicon glyphicon-asterisk"></dt>
                         <dd>关于我们</dd>
