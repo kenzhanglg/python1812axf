@@ -313,3 +313,1125 @@ Not Found: /favicon.ico
 [pid: 20725|app: 0|req: 144/144] 113.88.14.120 () {48 vars in 898 bytes} [Thu Mar 14 01:00:51 2019] POST /axf/login/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 0)
 [pid: 20725|app: 0|req: 145/145] 113.88.14.120 () {44 vars in 827 bytes} [Thu Mar 14 01:00:51 2019] GET /axf/market/ => generated 11219 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
 [pid: 20725|app: 0|req: 146/146] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 01:00:54 2019] GET /axf/mine/ => generated 5360 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 20725|app: 0|req: 147/147] 113.87.160.176 () {46 vars in 699 bytes} [Thu Mar 14 01:02:48 2019] GET /axf/ => generated 23642 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 20725|app: 0|req: 148/148] 113.87.160.176 () {44 vars in 678 bytes} [Thu Mar 14 01:02:51 2019] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 09:04:03 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x18e04c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x18e04c0 pid: 21591 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21591, cores: 2)
+[pid: 21591|app: 0|req: 1/1] 113.88.14.120 () {46 vars in 855 bytes} [Thu Mar 14 01:04:06 2019] GET /axf/mine/ => generated 5721 bytes in 66 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 2/2] 113.88.14.120 () {46 vars in 855 bytes} [Thu Mar 14 01:04:08 2019] GET /axf/mine/ => generated 5721 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 3/3] 113.88.14.120 () {44 vars in 812 bytes} [Thu Mar 14 01:04:09 2019] GET /axf/ => generated 23642 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 817 bytes} [Thu Mar 14 01:04:11 2019] GET /axf/mine/ => generated 5721 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 338, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21591|app: 0|req: 5/5] 113.88.14.120 () {44 vars in 832 bytes} [Thu Mar 14 01:04:18 2019] GET /axf/orderlist/ => generated 68530 bytes in 80 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 338, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21591|app: 0|req: 6/6] 113.88.14.120 () {46 vars in 863 bytes} [Thu Mar 14 01:04:20 2019] GET /axf/orderlist/ => generated 68665 bytes in 42 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 01:04:30 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 8/8] 113.88.14.120 () {48 vars in 942 bytes} [Thu Mar 14 01:04:35 2019] POST /axf/login/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 9/9] 113.88.14.120 () {44 vars in 827 bytes} [Thu Mar 14 01:04:35 2019] GET /axf/market/ => generated 11219 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 01:04:37 2019] GET /axf/mine/ => generated 5721 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 11/11] 113.88.14.120 () {44 vars in 832 bytes} [Thu Mar 14 01:04:38 2019] GET /axf/orderlist/ => generated 2116 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 12/12] 113.88.14.120 () {44 vars in 827 bytes} [Thu Mar 14 01:04:39 2019] GET /axf/mine/ => generated 5721 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 13/13] 47.97.216.82 () {34 vars in 501 bytes} [Thu Mar 14 01:17:16 2019] GET /axf/market/ => generated 11219 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 14/14] 139.224.11.233 () {34 vars in 555 bytes} [Thu Mar 14 01:20:38 2019] GET /axf/orderdetail/1552473243.3519968412 => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 15/15] 139.224.11.233 () {34 vars in 557 bytes} [Thu Mar 14 01:20:38 2019] GET /axf/orderdetail/1552473243.3519968412/ => generated 1451 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 16/16] 47.98.62.203 () {34 vars in 555 bytes} [Thu Mar 14 01:23:23 2019] GET /axf/orderdetail/1552473243.3519968412/ => generated 1451 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 21591|app: 0|req: 17/17] 47.92.124.187 () {34 vars in 553 bytes} [Thu Mar 14 01:27:28 2019] GET /axf/checkemail?email=335600%40qq.comn => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 18/18] 47.92.124.187 () {34 vars in 555 bytes} [Thu Mar 14 01:27:28 2019] GET /axf/checkemail/?email=335600%40qq.comn => generated 48 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 21591|app: 0|req: 19/19] 47.97.215.92 () {34 vars in 487 bytes} [Thu Mar 14 01:29:13 2019] GET /axf/ => generated 23642 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21591|app: 0|req: 20/20] 201.1.54.73 () {32 vars in 443 bytes} [Thu Mar 14 01:51:31 2019] GET / => generated 2026 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 21591|app: 0|req: 21/21] 156.220.249.9 () {32 vars in 445 bytes} [Thu Mar 14 01:52:38 2019] GET / => generated 2026 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21591|app: 0|req: 22/22] 211.23.154.136 () {34 vars in 356 bytes} [Thu Mar 14 01:52:44 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 21591|app: 0|req: 23/23] 47.96.254.10 () {26 vars in 261 bytes} [Thu Mar 14 02:18:55 2019] GET / => generated 55060 bytes in 32 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 11:00:42 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x19ff4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19ff4c0 pid: 21669 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21669, cores: 2)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 11:01:28 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x204b4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x204b4c0 pid: 21677 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21677, cores: 2)
+Not Found: /axf/returnurl
+[pid: 21677|app: 0|req: 1/1] 113.87.160.176 () {42 vars in 784 bytes} [Thu Mar 14 03:01:55 2019] GET /axf/returnurl => generated 5299 bytes in 15 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 2/2] 113.87.160.176 () {42 vars in 784 bytes} [Thu Mar 14 03:02:13 2019] GET /axf/resulturl => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 1)
+[pid: 21677|app: 0|req: 3/3] 113.87.160.176 () {42 vars in 786 bytes} [Thu Mar 14 03:02:13 2019] GET /axf/resulturl/ => generated 1227 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 21677|app: 0|req: 4/4] 113.87.160.176 () {42 vars in 790 bytes} [Thu Mar 14 03:03:41 2019] GET /axf/appnotifyurl => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 123 bytes (1 switches on core 0)
+支付完成
+[pid: 21677|app: 0|req: 5/5] 113.87.160.176 () {42 vars in 792 bytes} [Thu Mar 14 03:03:41 2019] GET /axf/appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 6/6] 113.87.160.176 () {42 vars in 776 bytes} [Thu Mar 14 03:03:56 2019] GET /axf/mine/ => generated 5721 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 807 bytes} [Thu Mar 14 03:04:01 2019] GET /axf/mine/ => generated 5721 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21677|app: 0|req: 8/8] 113.87.160.176 () {44 vars in 823 bytes} [Thu Mar 14 03:04:04 2019] GET /axf/cart/ => generated 2006 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 9/9] 113.87.160.176 () {44 vars in 823 bytes} [Thu Mar 14 03:04:06 2019] GET /axf/mine/ => generated 5721 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21677|app: 0|req: 10/10] 113.87.160.176 () {44 vars in 825 bytes} [Thu Mar 14 03:04:08 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 11/11] 113.87.160.176 () {48 vars in 943 bytes} [Thu Mar 14 03:04:11 2019] POST /axf/login/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 1)
+[pid: 21677|app: 0|req: 12/12] 113.87.160.176 () {44 vars in 828 bytes} [Thu Mar 14 03:04:11 2019] GET /axf/market/ => generated 11219 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 21677|app: 0|req: 13/13] 113.88.14.120 () {46 vars in 708 bytes} [Thu Mar 14 03:07:48 2019] GET /axf/mine/ => generated 5721 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 21677|app: 0|req: 14/14] 113.87.160.176 () {44 vars in 678 bytes} [Thu Mar 14 03:07:50 2019] GET /favicon.ico => generated 2074 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cache/global/img/gs.gif
+[pid: 21677|app: 0|req: 15/15] 80.82.70.187 () {32 vars in 414 bytes} [Thu Mar 14 03:11:45 2019] GET /cache/global/img/gs.gif => generated 2109 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 21677|app: 0|req: 16/16] 47.92.98.215 () {34 vars in 460 bytes} [Thu Mar 14 03:24:28 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 11:41:11 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xecc4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xecc4c0 pid: 21711 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21711, cores: 2)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 11:51:16 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x25774c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x25774c0 pid: 21724 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21724, cores: 2)
+[pid: 21724|app: 0|req: 1/1] 113.88.14.120 () {42 vars in 779 bytes} [Thu Mar 14 03:51:23 2019] GET /axf/market/ => generated 11219 bytes in 243 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 21724|app: 0|req: 2/2] 113.87.160.176 () {40 vars in 745 bytes} [Thu Mar 14 03:51:24 2019] GET /favicon.ico => generated 2074 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 3/3] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 03:51:26 2019] GET /axf/cart/ => generated 2006 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21724|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 822 bytes} [Thu Mar 14 03:51:30 2019] GET /axf/mine/ => generated 5721 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 5/5] 113.88.14.120 () {46 vars in 853 bytes} [Thu Mar 14 03:51:32 2019] GET /axf/mine/ => generated 5721 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21724|app: 0|req: 6/6] 113.88.14.120 () {42 vars in 775 bytes} [Thu Mar 14 03:51:45 2019] GET /axf/mine/ => generated 5721 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 806 bytes} [Thu Mar 14 03:51:51 2019] GET /axf/mine/ => generated 5721 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21724|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 03:51:53 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 9/9] 113.88.14.120 () {48 vars in 942 bytes} [Thu Mar 14 03:51:59 2019] POST /axf/login/ => generated 0 bytes in 22 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 0)
+[pid: 21724|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 827 bytes} [Thu Mar 14 03:51:59 2019] GET /axf/market/ => generated 11219 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 11/11] 113.88.14.120 () {44 vars in 786 bytes} [Thu Mar 14 03:52:02 2019] GET /axf/addcart/?goodsid=497 => generated 144 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 21724|app: 0|req: 12/12] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 03:52:02 2019] GET /axf/cart/ => generated 3471 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21724|app: 0|req: 13/13] 113.88.14.120 () {44 vars in 840 bytes} [Thu Mar 14 03:52:05 2019] GET /axf/generateorder/ => generated 1551 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Internal Server Error: /axf/pay/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 395, in pay
+    return_url= 'http://47.112.107.146/returnurl/',
+  File "./app/alipay/__init__.py", line 52, in direct_pay
+    return self.sign_data(data)
+  File "./app/alipay/__init__.py", line 76, in sign_data
+    sign = self.sign(unsigned_string.encode("utf-8"))
+  File "./app/alipay/__init__.py", line 100, in sign
+    signature = signer.sign(SHA256.new(unsigned_string))
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/Signature/pkcs1_15.py", line 81, in sign
+    m_int = self._key._decrypt(em_int)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/PublicKey/RSA.py", line 151, in _decrypt
+    raise TypeError("This is not a private key")
+TypeError: This is not a private key
+[pid: 21724|app: 0|req: 14/14] 113.88.14.120 () {44 vars in 783 bytes} [Thu Mar 14 03:52:06 2019] GET /axf/pay/?orderid=12 => generated 12659 bytes in 28 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 1)
+Internal Server Error: /axf/pay/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 395, in pay
+    return_url= 'http://47.112.107.146/returnurl/',
+  File "./app/alipay/__init__.py", line 52, in direct_pay
+    return self.sign_data(data)
+  File "./app/alipay/__init__.py", line 76, in sign_data
+    sign = self.sign(unsigned_string.encode("utf-8"))
+  File "./app/alipay/__init__.py", line 100, in sign
+    signature = signer.sign(SHA256.new(unsigned_string))
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/Signature/pkcs1_15.py", line 81, in sign
+    m_int = self._key._decrypt(em_int)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/PublicKey/RSA.py", line 151, in _decrypt
+    raise TypeError("This is not a private key")
+TypeError: This is not a private key
+[pid: 21724|app: 0|req: 15/15] 113.88.14.120 () {44 vars in 783 bytes} [Thu Mar 14 03:52:22 2019] GET /axf/pay/?orderid=12 => generated 12659 bytes in 24 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 0)
+Internal Server Error: /axf/pay/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 395, in pay
+    return_url= 'http://47.112.107.146/returnurl/',
+  File "./app/alipay/__init__.py", line 52, in direct_pay
+    return self.sign_data(data)
+  File "./app/alipay/__init__.py", line 76, in sign_data
+    sign = self.sign(unsigned_string.encode("utf-8"))
+  File "./app/alipay/__init__.py", line 100, in sign
+    signature = signer.sign(SHA256.new(unsigned_string))
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/Signature/pkcs1_15.py", line 81, in sign
+    m_int = self._key._decrypt(em_int)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/Crypto/PublicKey/RSA.py", line 151, in _decrypt
+    raise TypeError("This is not a private key")
+TypeError: This is not a private key
+[pid: 21724|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 783 bytes} [Thu Mar 14 03:52:42 2019] GET /axf/pay/?orderid=12 => generated 12659 bytes in 22 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 11:56:30 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x204d4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x204d4c0 pid: 21805 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21805, cores: 2)
+[pid: 21805|app: 0|req: 1/1] 113.88.14.120 () {46 vars in 855 bytes} [Thu Mar 14 03:56:39 2019] GET /axf/cart/ => generated 2006 bytes in 238 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21805|app: 0|req: 2/2] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 03:56:42 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 3/3] 113.88.14.120 () {48 vars in 942 bytes} [Thu Mar 14 03:56:46 2019] POST /axf/login/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 0)
+[pid: 21805|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 827 bytes} [Thu Mar 14 03:56:46 2019] GET /axf/market/ => generated 11219 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 5/5] 113.88.14.120 () {44 vars in 786 bytes} [Thu Mar 14 03:56:48 2019] GET /axf/addcart/?goodsid=496 => generated 177 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 21805|app: 0|req: 6/6] 113.88.14.120 () {44 vars in 824 bytes} [Thu Mar 14 03:56:49 2019] GET /axf/cart/ => generated 3486 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 840 bytes} [Thu Mar 14 03:56:51 2019] GET /axf/generateorder/ => generated 1566 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21805|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 783 bytes} [Thu Mar 14 03:56:53 2019] GET /axf/pay/?orderid=13 => generated 124 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 9/9] 113.88.14.120 () {44 vars in 783 bytes} [Thu Mar 14 03:57:52 2019] GET /axf/pay/?orderid=13 => generated 124 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 0)
+[pid: 21805|app: 0|req: 10/10] 106.14.204.78 () {34 vars in 551 bytes} [Thu Mar 14 04:03:35 2019] GET /axf/checkemail?email=335600%40qq.com => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 143 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 11/11] 106.14.204.78 () {34 vars in 553 bytes} [Thu Mar 14 04:03:35 2019] GET /axf/checkemail/?email=335600%40qq.com => generated 54 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 21805|app: 0|req: 12/12] 39.107.86.51 () {34 vars in 505 bytes} [Thu Mar 14 04:04:20 2019] GET /axf/register/ => generated 4529 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+Internal Server Error: /axf/generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 319, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21805|app: 0|req: 13/13] 47.92.146.203 () {34 vars in 516 bytes} [Thu Mar 14 04:04:24 2019] GET /axf/generateorder/ => generated 66981 bytes in 44 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 12:06:51 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x13ee4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13ee4c0 pid: 21839 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 21839, cores: 2)
+[pid: 21839|app: 0|req: 1/1] 113.87.160.176 () {46 vars in 856 bytes} [Thu Mar 14 04:07:01 2019] GET /axf/cart/ => generated 2006 bytes in 227 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 2/2] 113.87.160.176 () {44 vars in 825 bytes} [Thu Mar 14 04:07:02 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 3/3] 113.87.160.176 () {48 vars in 943 bytes} [Thu Mar 14 04:07:06 2019] POST /axf/login/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 6 headers in 279 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 4/4] 113.87.160.176 () {44 vars in 828 bytes} [Thu Mar 14 04:07:06 2019] GET /axf/market/ => generated 11219 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 787 bytes} [Thu Mar 14 04:07:08 2019] GET /axf/addcart/?goodsid=497 => generated 144 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 825 bytes} [Thu Mar 14 04:07:09 2019] GET /axf/cart/ => generated 3471 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 841 bytes} [Thu Mar 14 04:07:11 2019] GET /axf/generateorder/ => generated 1551 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 8/8] 113.87.160.176 () {44 vars in 784 bytes} [Thu Mar 14 04:07:12 2019] GET /axf/pay/?orderid=14 => generated 124 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 9/9] 47.96.12.13 () {34 vars in 484 bytes} [Thu Mar 14 04:09:23 2019] GET /axf => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 11/10] 47.96.12.13 () {34 vars in 547 bytes} [Thu Mar 14 04:09:23 2019] GET /axf/checkemail?email=12345%40qq.com => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 142 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 11/11] 47.96.12.13 () {34 vars in 486 bytes} [Thu Mar 14 04:09:23 2019] GET /axf/ => generated 23642 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 12/12] 47.96.12.13 () {34 vars in 549 bytes} [Thu Mar 14 04:09:23 2019] GET /axf/checkemail/?email=12345%40qq.com => generated 54 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 13/13] 47.97.220.124 () {34 vars in 514 bytes} [Thu Mar 14 04:12:33 2019] GET /axf/generateorder => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 124 bytes (1 switches on core 0)
+Internal Server Error: /axf/generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 319, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 14/14] 47.97.220.124 () {34 vars in 516 bytes} [Thu Mar 14 04:12:33 2019] GET /axf/generateorder/ => generated 66981 bytes in 44 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 15/15] 106.14.215.243 () {34 vars in 499 bytes} [Thu Mar 14 04:13:15 2019] GET /axf/cart/ => generated 2006 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 16/16] 47.97.192.46 () {34 vars in 505 bytes} [Thu Mar 14 04:15:13 2019] GET /axf/orderlist => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 0)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 343, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 17/17] 47.97.192.46 () {34 vars in 507 bytes} [Thu Mar 14 04:15:13 2019] GET /axf/orderlist/ => generated 66942 bytes in 42 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Not Found: /
+[pid: 21839|app: 0|req: 18/18] 101.132.67.50 () {34 vars in 461 bytes} [Thu Mar 14 04:17:11 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 19/19] 47.98.96.116 () {34 vars in 495 bytes} [Thu Mar 14 04:17:28 2019] GET /axf/cart => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 115 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 20/20] 47.98.96.116 () {34 vars in 497 bytes} [Thu Mar 14 04:17:28 2019] GET /axf/cart/ => generated 2006 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 21/21] 47.97.215.92 () {34 vars in 503 bytes} [Thu Mar 14 04:26:24 2019] GET /axf/register => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 119 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 22/22] 47.97.215.92 () {34 vars in 505 bytes} [Thu Mar 14 04:26:25 2019] GET /axf/register/ => generated 4529 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 23/23] 47.92.103.177 () {34 vars in 498 bytes} [Thu Mar 14 04:28:20 2019] GET /axf/login => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 116 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 24/24] 47.92.103.177 () {34 vars in 500 bytes} [Thu Mar 14 04:28:20 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21839|app: 0|req: 25/25] 47.92.103.177 () {34 vars in 461 bytes} [Thu Mar 14 04:33:20 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 21839|app: 0|req: 26/26] 47.92.133.31 () {34 vars in 460 bytes} [Thu Mar 14 04:46:08 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 27/27] 106.15.176.145 () {34 vars in 499 bytes} [Thu Mar 14 05:10:52 2019] GET /axf/mine/ => generated 5721 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 343, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 28/28] 116.62.215.53 () {34 vars in 508 bytes} [Thu Mar 14 05:15:55 2019] GET /axf/orderlist/ => generated 66943 bytes in 42 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 29/29] 47.92.116.44 () {34 vars in 495 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/cart => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 115 bytes (1 switches on core 1)
+Internal Server Error: /axf/generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 319, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 31/30] 47.92.116.44 () {34 vars in 497 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/cart/ => generated 2006 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 32/31] 47.92.116.44 () {34 vars in 497 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/login => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 116 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 32/32] 47.92.116.44 () {34 vars in 515 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/generateorder/ => generated 66980 bytes in 46 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 33/33] 47.92.116.44 () {34 vars in 499 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 34/34] 47.92.116.44 () {34 vars in 499 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/market => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 117 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 36/35] 47.92.116.44 () {34 vars in 497 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/mine/ => generated 5721 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 36/36] 47.92.116.44 () {34 vars in 501 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/market/ => generated 11219 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 37/37] 47.92.116.44 () {34 vars in 555 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/orderdetail/1552473243.3519968412/ => generated 1557 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 38/38] 47.92.116.44 () {34 vars in 503 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/register => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 119 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 39/39] 47.92.116.44 () {34 vars in 505 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/register/ => generated 4529 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 40/40] 47.92.116.44 () {34 vars in 505 bytes} [Thu Mar 14 06:12:56 2019] GET /axf/register/ => generated 4529 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21839|app: 0|req: 41/41] 47.92.116.44 () {34 vars in 479 bytes} [Thu Mar 14 06:12:57 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+Not Found: /
+[pid: 21839|app: 0|req: 42/42] 106.14.217.247 () {34 vars in 481 bytes} [Thu Mar 14 06:16:14 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21839|app: 0|req: 43/43] 106.14.217.247 () {34 vars in 481 bytes} [Thu Mar 14 06:16:15 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 44/44] 106.14.217.247 () {34 vars in 489 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/ => generated 23642 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 45/45] 106.14.217.247 () {34 vars in 499 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/cart/ => generated 2006 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 46/46] 106.14.217.247 () {34 vars in 552 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/checkemail?email=335600%40qq.com => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 143 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 47/47] 106.14.217.247 () {34 vars in 554 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/checkemail/?email=335600%40qq.com => generated 54 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 48/48] 106.14.217.247 () {34 vars in 554 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/checkemail?email=335600%40qq.comn => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 49/49] 106.14.217.247 () {34 vars in 556 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/checkemail/?email=335600%40qq.comn => generated 48 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 50/50] 106.14.217.247 () {34 vars in 501 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 51/51] 106.14.217.247 () {34 vars in 497 bytes} [Thu Mar 14 06:16:15 2019] GET /axf/mine => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 115 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 52/52] 106.14.217.247 () {34 vars in 499 bytes} [Thu Mar 14 06:16:16 2019] GET /axf/mine/ => generated 5721 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 343, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 53/53] 106.14.217.247 () {34 vars in 509 bytes} [Thu Mar 14 06:16:16 2019] GET /axf/orderlist/ => generated 66944 bytes in 40 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 21839|app: 0|req: 54/54] 47.92.5.11 () {34 vars in 483 bytes} [Thu Mar 14 06:31:01 2019] GET /axf => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 55/55] 47.92.5.11 () {34 vars in 485 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/ => generated 23642 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 56/56] 47.92.5.11 () {34 vars in 546 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/checkemail?email=12345%40qq.com => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 142 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 57/57] 47.92.5.11 () {34 vars in 511 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/generateorder => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 124 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 59/58] 47.92.5.11 () {34 vars in 548 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/checkemail/?email=12345%40qq.com => generated 54 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+Internal Server Error: /axf/generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 319, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 60/59] 47.92.5.11 () {34 vars in 499 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/market/ => generated 11219 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 61/60] 47.92.5.11 () {34 vars in 551 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/orderdetail/1552473243.3519968412 => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 61/61] 47.92.5.11 () {34 vars in 513 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/generateorder/ => generated 66978 bytes in 59 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 21839|app: 0|req: 62/62] 47.92.5.11 () {34 vars in 503 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/orderlist => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 1)
+[pid: 21839|app: 0|req: 63/63] 47.92.5.11 () {34 vars in 553 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/orderdetail/1552473243.3519968412/ => generated 1557 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+Internal Server Error: /axf/orderlist/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 343, in orderlist
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 21839|app: 0|req: 64/64] 47.92.5.11 () {34 vars in 505 bytes} [Thu Mar 14 06:31:01 2019] GET /axf/orderlist/ => generated 66940 bytes in 41 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /
+[pid: 21839|app: 0|req: 65/65] 47.92.5.11 () {34 vars in 477 bytes} [Thu Mar 14 06:31:01 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 21839|app: 0|req: 66/66] 47.101.204.90 () {34 vars in 461 bytes} [Thu Mar 14 06:38:06 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 15:10:50 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xe7f4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xe7f4c0 pid: 22055 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22055, cores: 2)
+[pid: 22055|app: 0|req: 1/1] 113.88.14.120 () {40 vars in 630 bytes} [Thu Mar 14 07:11:16 2019] GET /axf => generated 0 bytes in 200 msecs (HTTP/1.1 301) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 2/2] 113.88.14.120 () {40 vars in 632 bytes} [Thu Mar 14 07:11:16 2019] GET /axf/ => generated 23642 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 22055|app: 0|req: 3/3] 113.88.14.120 () {38 vars in 611 bytes} [Thu Mar 14 07:11:18 2019] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 4/4] 113.88.14.120 () {42 vars in 663 bytes} [Thu Mar 14 07:11:23 2019] GET /axf/ => generated 23642 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 5/5] 113.88.14.120 () {42 vars in 663 bytes} [Thu Mar 14 07:11:27 2019] GET /axf/ => generated 23642 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 6/6] 113.87.160.176 () {46 vars in 699 bytes} [Thu Mar 14 07:11:36 2019] GET /axf/ => generated 23642 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 22055|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 678 bytes} [Thu Mar 14 07:11:38 2019] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 8/8] 113.88.14.120 () {40 vars in 632 bytes} [Thu Mar 14 07:13:13 2019] GET /axf/ => generated 23642 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 9/9] 113.87.160.176 () {42 vars in 664 bytes} [Thu Mar 14 07:13:20 2019] GET /axf/ => generated 23642 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 10/10] 113.87.160.176 () {42 vars in 685 bytes} [Thu Mar 14 07:13:25 2019] GET /axf/cart/ => generated 2006 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 11/11] 113.87.160.176 () {42 vars in 690 bytes} [Thu Mar 14 07:13:27 2019] GET /axf/mine/ => generated 5695 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 12/12] 113.87.160.176 () {44 vars in 716 bytes} [Thu Mar 14 07:13:28 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 13/13] 113.87.160.176 () {48 vars in 910 bytes} [Thu Mar 14 07:13:33 2019] POST /axf/login/ => generated 0 bytes in 15 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 14/14] 113.87.160.176 () {44 vars in 835 bytes} [Thu Mar 14 07:13:33 2019] GET /axf/mine/ => generated 5684 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 15/15] 113.87.160.176 () {44 vars in 834 bytes} [Thu Mar 14 07:13:36 2019] GET /axf/cart/ => generated 2588 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 16/16] 113.87.160.176 () {44 vars in 838 bytes} [Thu Mar 14 07:13:37 2019] GET /axf/market/ => generated 11219 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 17/17] 113.87.160.176 () {44 vars in 798 bytes} [Thu Mar 14 07:13:39 2019] GET /axf/addcart/?goodsid=496 => generated 177 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 18/18] 113.87.160.176 () {44 vars in 836 bytes} [Thu Mar 14 07:13:41 2019] GET /axf/cart/ => generated 3486 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 19/19] 113.87.160.176 () {44 vars in 852 bytes} [Thu Mar 14 07:13:42 2019] GET /axf/generateorder/ => generated 1566 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 20/20] 113.87.160.176 () {44 vars in 795 bytes} [Thu Mar 14 07:13:43 2019] GET /axf/pay/?orderid=15 => generated 124 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+Not Found: /
+[pid: 22055|app: 0|req: 21/21] 188.158.119.224 () {32 vars in 446 bytes} [Thu Mar 14 07:26:14 2019] GET / => generated 2026 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22055|app: 0|req: 22/22] 113.88.14.120 () {40 vars in 755 bytes} [Thu Mar 14 07:33:25 2019] GET /favicon.ico => generated 2074 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 23/23] 113.87.160.176 () {40 vars in 631 bytes} [Thu Mar 14 07:38:18 2019] GET /axf => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 24/24] 113.87.160.176 () {40 vars in 633 bytes} [Thu Mar 14 07:38:18 2019] GET /axf/ => generated 23642 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22055|app: 0|req: 25/25] 113.88.14.120 () {38 vars in 611 bytes} [Thu Mar 14 07:38:23 2019] GET /favicon.ico => generated 2074 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 26/26] 113.88.14.120 () {42 vars in 663 bytes} [Thu Mar 14 07:38:30 2019] GET /axf/ => generated 23642 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 27/27] 113.88.14.120 () {42 vars in 684 bytes} [Thu Mar 14 07:38:44 2019] GET /axf/mine/ => generated 5695 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 28/28] 113.88.14.120 () {44 vars in 715 bytes} [Thu Mar 14 07:38:46 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 29/29] 113.88.14.120 () {48 vars in 909 bytes} [Thu Mar 14 07:38:50 2019] POST /axf/login/ => generated 0 bytes in 11 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 30/30] 113.88.14.120 () {44 vars in 834 bytes} [Thu Mar 14 07:38:50 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 31/31] 113.88.14.120 () {44 vars in 843 bytes} [Thu Mar 14 07:40:56 2019] GET /axf/orderlist/ => generated 3304 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22055|app: 0|req: 32/32] 113.88.14.120 () {44 vars in 896 bytes} [Thu Mar 14 07:40:57 2019] GET /axf/orderdetail/1552396052.6680077721/ => generated 2237 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 33/33] 113.88.14.120 () {44 vars in 812 bytes} [Thu Mar 14 07:40:59 2019] GET /axf/pay/?orderid=1 => generated 124 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+Not Found: /
+[pid: 22055|app: 0|req: 34/34] 47.101.203.29 () {34 vars in 461 bytes} [Thu Mar 14 07:42:13 2019] GET / => generated 2023 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 22055|app: 0|req: 35/35] 113.87.160.176 () {44 vars in 818 bytes} [Thu Mar 14 07:43:45 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 16:10:53 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1f514c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1f514c0 pid: 22257 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22257, cores: 2)
+[pid: 22257|app: 0|req: 1/1] 113.87.160.176 () {46 vars in 928 bytes} [Thu Mar 14 08:11:39 2019] GET /axf/orderdetail/1552396052.6680077721/ => generated 2237 bytes in 239 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 2/2] 113.87.160.176 () {46 vars in 928 bytes} [Thu Mar 14 08:11:41 2019] GET /axf/orderdetail/1552396052.6680077721/ => generated 2237 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 3/3] 113.87.160.176 () {44 vars in 863 bytes} [Thu Mar 14 08:11:42 2019] GET /axf/mine/ => generated 5695 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 4/4] 113.87.160.176 () {44 vars in 836 bytes} [Thu Mar 14 08:11:44 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 834 bytes} [Thu Mar 14 08:11:48 2019] GET /axf/cart/ => generated 2006 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 834 bytes} [Thu Mar 14 08:11:50 2019] GET /axf/mine/ => generated 5695 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 836 bytes} [Thu Mar 14 08:11:51 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 8/8] 113.87.160.176 () {48 vars in 954 bytes} [Thu Mar 14 08:11:55 2019] POST /axf/login/ => generated 0 bytes in 14 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 9/9] 113.87.160.176 () {44 vars in 835 bytes} [Thu Mar 14 08:11:55 2019] GET /axf/mine/ => generated 5684 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 10/10] 113.87.160.176 () {44 vars in 844 bytes} [Thu Mar 14 08:11:57 2019] GET /axf/orderlist/ => generated 3304 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 11/11] 113.87.160.176 () {44 vars in 897 bytes} [Thu Mar 14 08:11:58 2019] GET /axf/orderdetail/1552396052.6680077721/ => generated 2237 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 12/12] 113.87.160.176 () {44 vars in 813 bytes} [Thu Mar 14 08:12:00 2019] GET /axf/pay/?orderid=1 => generated 124 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+Not Found: /
+[pid: 22257|app: 0|req: 13/13] 212.129.50.159 () {30 vars in 319 bytes} [Thu Mar 14 08:14:21 2019] GET / => generated 2023 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /appnotifyurl/
+[pid: 22257|app: 0|req: 14/14] 203.209.240.198 () {34 vars in 496 bytes} [Thu Mar 14 08:27:39 2019] POST /appnotifyurl/ => generated 2081 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /returnurl/
+[pid: 22257|app: 0|req: 15/15] 113.87.160.176 () {44 vars in 2344 bytes} [Thu Mar 14 08:27:52 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552396052.6680077721&method=alipay.trade.page.pay.return&total_amount=55.10&sign=nHc0b2AKSqe2ER2bZpagpgRMVb9nH1ZhTXDcrLqfg3u6SiSWgqQ30blkDp%2BqB4SLl2lqjg4v3dHUM9wo%2FgjfG7TNBlip%2FPeCnJNIvRVxYDwf8DxCJ8giWzNxPv8BZx%2BAXuwvm%2FwO5AP5Vbs7pg5nrAVvkHGsHZiHeUfg%2FOD8HBupfDBPj7HopW9d1k%2BewdARQp5MN4TmziI3v9%2BI936fstd1oJR6%2FLD99n3KV3eTRs%2BPWxjKD6ZIiNqqyyRZDaKa2tikWXkqfrNSEaa3%2FLh3cKmSKcoKI0wfm2fbb061iHEGZciRAJl4SY3jFhPxDRg%2BPeH%2BdxrssGCt3gNN0i2ZjQ%3D%3D&trade_no=2019031422001445170500872501&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A27%3A46 => generated 2778 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /returnurl
+[pid: 22257|app: 0|req: 16/16] 113.88.14.120 () {42 vars in 786 bytes} [Thu Mar 14 08:28:59 2019] GET /returnurl => generated 2068 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 17/17] 113.88.14.120 () {42 vars in 794 bytes} [Thu Mar 14 08:29:05 2019] GET /axf/returnurl => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 18/18] 113.88.14.120 () {42 vars in 796 bytes} [Thu Mar 14 08:29:05 2019] GET /axf/returnurl/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 19/19] 113.88.14.120 () {42 vars in 786 bytes} [Thu Mar 14 08:29:05 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 20/20] 113.88.14.120 () {42 vars in 2121 bytes} [Thu Mar 14 08:30:07 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552396052.6680077721&method=alipay.trade.page.pay.return&total_amount=55.10&sign=nHc0b2AKSqe2ER2bZpagpgRMVb9nH1ZhTXDcrLqfg3u6SiSWgqQ30blkDp%2BqB4SLl2lqjg4v3dHUM9wo%2FgjfG7TNBlip%2FPeCnJNIvRVxYDwf8DxCJ8giWzNxPv8BZx%2BAXuwvm%2FwO5AP5Vbs7pg5nrAVvkHGsHZiHeUfg%2FOD8HBupfDBPj7HopW9d1k%2BewdARQp5MN4TmziI3v9%2BI936fstd1oJR6%2FLD99n3KV3eTRs%2BPWxjKD6ZIiNqqyyRZDaKa2tikWXkqfrNSEaa3%2FLh3cKmSKcoKI0wfm2fbb061iHEGZciRAJl4SY3jFhPxDRg%2BPeH%2BdxrssGCt3gNN0i2ZjQ%3D%3D&trade_no=2019031422001445170500872501&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A27%3A46 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 21/21] 113.88.14.120 () {42 vars in 786 bytes} [Thu Mar 14 08:30:07 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /appnotifyurl/
+[pid: 22257|app: 0|req: 22/22] 113.88.14.120 () {42 vars in 794 bytes} [Thu Mar 14 08:30:28 2019] GET /appnotifyurl/ => generated 2080 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 23/23] 113.88.14.120 () {42 vars in 802 bytes} [Thu Mar 14 08:30:35 2019] GET /axf/appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 24/24] 113.88.14.120 () {44 vars in 817 bytes} [Thu Mar 14 08:31:07 2019] GET /axf/mine/ => generated 5684 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 25/25] 113.88.14.120 () {44 vars in 843 bytes} [Thu Mar 14 08:31:10 2019] GET /axf/orderlist/ => generated 3304 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 26/26] 113.88.14.120 () {44 vars in 896 bytes} [Thu Mar 14 08:31:11 2019] GET /axf/orderdetail/1552396052.6680077721/ => generated 2237 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 27/27] 113.88.14.120 () {44 vars in 812 bytes} [Thu Mar 14 08:31:13 2019] GET /axf/pay/?orderid=1 => generated 124 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 0)
+Not Found: /appnotifyurl/
+[pid: 22257|app: 0|req: 28/28] 113.88.14.120 () {42 vars in 794 bytes} [Thu Mar 14 08:31:45 2019] GET /appnotifyurl/ => generated 2080 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 29/29] 113.87.160.176 () {42 vars in 803 bytes} [Thu Mar 14 08:33:20 2019] GET /axf/appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 30/30] 113.87.160.176 () {46 vars in 725 bytes} [Thu Mar 14 08:34:38 2019] GET /axf/appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 31/31] 140.205.118.76 () {34 vars in 503 bytes} [Thu Mar 14 08:35:50 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22257|app: 0|req: 32/32] 113.87.160.176 () {44 vars in 2347 bytes} [Thu Mar 14 08:36:30 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552396080.54451681412&method=alipay.trade.page.pay.return&total_amount=20.90&sign=JbKoOI6J14jqsnAQ0CJvFvVoaQI%2FIg63HVRBuBmDtE0CE9z%2BKv89IDS5z%2BrXXmlAW3oLqWJCGJjL3NqEvd9ki1Q7zxhXyaf8721NcstPtWJY5HksTsO2sOhRJ218zSu%2BJmN%2BnWJiU2ReLfsq1wETsXwXIfIp2rmlZjEBtQ5qIa7V72nCBfNcBEBFYmigTY4KF0RP%2FrBRE%2BxJMrml%2F6Y%2B83gMEh0ob041cRvHno7kG9ObuJrMk8Gnyj5ICoMZccngSPs6qdOUO6W2lxxD2ThL%2BUTeDhmtAkbaua1SM2rhhHOl9nVmtsCmtW2TcHqJhGnVvcKvdrD9RkBHEi0CRtV%2F6Q%3D%3D&trade_no=2019031422001445170500872161&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A35%3A57 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22257|app: 0|req: 33/33] 113.87.160.176 () {44 vars in 1018 bytes} [Thu Mar 14 08:36:30 2019] GET /axf/mine/ => generated 5684 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 16:41:54 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1b814c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1b814c0 pid: 22312 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22312, cores: 2)
+Internal Server Error: /axf/appnotifyurl/
+Traceback (most recent call last):
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.virtualenv/axf/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "./app/views.py", line 377, in appnotifyurl
+    order.status = 1
+AttributeError: 'NoneType' object has no attribute 'status'
+[pid: 22312|app: 0|req: 1/1] 140.205.118.188 () {34 vars in 504 bytes} [Thu Mar 14 08:43:19 2019] POST /axf/appnotifyurl/ => generated 70507 bytes in 278 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 22312|app: 0|req: 2/2] 113.87.160.176 () {44 vars in 2337 bytes} [Thu Mar 14 08:43:35 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552543464.11078438201&method=alipay.trade.page.pay.return&total_amount=6.80&sign=Y4S7yrvvWOOS2dpk6gFhyQlEfvgP3x6UeNRExy%2FeF3yy5PLUIB17fWUejRZpgBZylZjA2DI1gngTI%2FBwa%2FlWe6O%2FUfaNoRyHZdPnDfmumeKvOi8bE5Cwq3AqxDV0Qh9UI7nh7lHkTFeTxYYdgA4Yzox0vuu9cVDFtA%2Ftl%2BIwY6HMyDgz3IfwjW4Df3rM6YV7auu7z33WCP1winuxDdRilJOhsW7U1D7r5kga3DDXQLDxj1%2BYCKfNoG2D%2FXVaLMvbgyxKImm7VBAhdRiR8WAbx1WFHgivs1%2F8EVWQtJ8Vs2gUUYMy1mYLop66aO5ARiKbxtIs7R9lhAPRimvjFUha9g%3D%3D&trade_no=2019031422001445170500872320&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A43%3A27 => generated 0 bytes in 6 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22312|app: 0|req: 3/3] 113.87.160.176 () {44 vars in 1018 bytes} [Thu Mar 14 08:43:35 2019] GET /axf/mine/ => generated 5695 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22312|app: 0|req: 4/4] 113.87.160.176 () {44 vars in 836 bytes} [Thu Mar 14 08:43:48 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 22312|app: 0|req: 5/5] 113.88.14.120 () {48 vars in 953 bytes} [Thu Mar 14 08:43:52 2019] POST /axf/login/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 0)
+[pid: 22312|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 835 bytes} [Thu Mar 14 08:43:52 2019] GET /axf/mine/ => generated 5684 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 16:48:01 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xe224c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xe224c0 pid: 22351 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22351, cores: 2)
+[pid: 22351|app: 0|req: 1/1] 140.205.118.100 () {34 vars in 504 bytes} [Thu Mar 14 08:49:15 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 209 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22351|app: 0|req: 2/2] 113.88.14.120 () {44 vars in 2321 bytes} [Thu Mar 14 08:49:30 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552553323.1983226314&method=alipay.trade.page.pay.return&total_amount=1.00&sign=synkvKhkLgQnd%2B2w1fgXEfsB7n9irewAgVtfHUaUSmJMeswZmiM%2F5vbXWnGzVAxsIG0w%2BCFge63YIUiy3Xa50xwNNsY60JRiTOlNE3oMcDJuswAQH2OAVBk10vGEgxDAxImHq0phUH8SJOtpf4q6r3nrsnk8RMP8xozOsr%2FgFcn0ZssN4Xeq2oFPWLoBpVHihfgo3glkkMzQIP8FvP6ymTxzpB7mGpoEimRrUlQVxm0VGZiaOw2hqYryVSUUw8aV%2Fjd42w8TX0jiDNsgqQMCyI1w9aEhoX2AGCX9ixnH%2FhcR021qg8X5vjXbrPu2hwo6DroZgLoyhuJKDvSvxQ6JMw%3D%3D&trade_no=2019031422001445170500872502&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A49%3A23 => generated 0 bytes in 6 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22351|app: 0|req: 3/3] 113.88.14.120 () {44 vars in 1016 bytes} [Thu Mar 14 08:49:30 2019] GET /axf/mine/ => generated 5695 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22351|app: 0|req: 4/4] 113.88.14.120 () {40 vars in 755 bytes} [Thu Mar 14 08:49:31 2019] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 22351|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 836 bytes} [Thu Mar 14 08:49:39 2019] GET /axf/login/ => generated 3083 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 22351|app: 0|req: 6/6] 113.87.160.176 () {48 vars in 954 bytes} [Thu Mar 14 08:49:43 2019] POST /axf/login/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 1)
+[pid: 22351|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 834 bytes} [Thu Mar 14 08:49:43 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22351|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 843 bytes} [Thu Mar 14 08:49:47 2019] GET /axf/orderlist/ => generated 3304 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22351|app: 0|req: 9/9] 113.88.14.120 () {44 vars in 838 bytes} [Thu Mar 14 08:49:49 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22351|app: 0|req: 10/10] 113.88.14.120 () {46 vars in 708 bytes} [Thu Mar 14 08:54:44 2019] GET /axf/mine/ => generated 5695 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 22351|app: 0|req: 11/11] 113.87.160.176 () {44 vars in 678 bytes} [Thu Mar 14 08:54:45 2019] GET /favicon.ico => generated 2074 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 16:56:23 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x22804c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x22804c0 pid: 22385 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22385, cores: 2)
+[pid: 22385|app: 0|req: 1/1] 140.205.118.175 () {34 vars in 504 bytes} [Thu Mar 14 08:57:38 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 209 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22385|app: 0|req: 2/2] 113.87.160.176 () {44 vars in 2346 bytes} [Thu Mar 14 08:57:54 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552553812.3324355232&method=alipay.trade.page.pay.return&total_amount=1.00&sign=YbkyoSDP7dg2aPLpIj2CpGmXSHKw7Jm57r3PUr62Pdbn0ycPpEuSbj27dddQNcwMsL%2BuMLjGRRxJ7o6HvtWlYLwhdg0aodB8gTa%2FZh2ZkH2AIlxow0puKR%2FDTIy5ZUNZTHNJYN5zSyaOvcaBzAA04P7CZKwKVXey4%2BnzP6bkBfgDk8aikBzkyB7IzbfXD158h%2BV7n%2FU3gZNIl9cq%2BRF0vUlOj4gCyjv%2BKv2LDjSmMUwy51Ne8dvln1kjJeDLbPk77xKxF%2FWJrbVddZiBiTfHN96ttp9gzWp6Z6%2FDqXJehtSkPKMM05TfSZGF1fcpR4nmUk%2FAgx9aNareJmrFLJH%2FVg%3D%3D&trade_no=2019031422001445170500872162&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+16%3A57%3A46 => generated 0 bytes in 7 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22385|app: 0|req: 3/3] 113.87.160.176 () {44 vars in 1017 bytes} [Thu Mar 14 08:57:54 2019] GET /axf/mine/ => generated 5695 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 17:00:37 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x23ba4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x23ba4c0 pid: 22414 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22414, cores: 2)
+1111
+2222
+3333
+[pid: 22414|app: 0|req: 1/1] 140.205.118.158 () {34 vars in 504 bytes} [Thu Mar 14 09:01:57 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 218 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22414|app: 0|req: 2/2] 113.88.14.120 () {44 vars in 2319 bytes} [Thu Mar 14 09:02:14 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552554069.4093953714&method=alipay.trade.page.pay.return&total_amount=49.50&sign=oCuC9PuzFBT1muy19ctYPYGR%2FVtrXwMV8z6EJmeCWe4aGjrOktwYfYg8Vl6XeK5ddk7anW3p%2F4LpWQ04qE%2BD523mCiolOL3ARH1mjeHJNURaKUsNwNU533ZYg7pdatFihjY1jPf1YlfQFh2Y7ZjdVZF23a5iGNavClMidPv3EJKcZLeH%2BD38nPnJKWs2RqNZuTbBahY68w%2F0YxE%2BTI2XWd3GF51uHmpHKPCDi54Pzm6q4d2xMILj7mLJ0P7yzKwxvZiMDar0jpGTTQPAlOa23pn8Kx3WJwNwommwcgySFCDV1EUdqV1SI4P3Qa4p5lBGv%2BCKcBpzcLzhpqR4m6RACA%3D%3D&trade_no=2019031422001445170500872163&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+17%3A02%3A05 => generated 0 bytes in 7 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22414|app: 0|req: 3/3] 113.88.14.120 () {44 vars in 1008 bytes} [Thu Mar 14 09:02:14 2019] GET /axf/mine/ => generated 5695 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+1111
+2222
+3333
+[pid: 22414|app: 0|req: 4/4] 140.205.118.237 () {34 vars in 504 bytes} [Thu Mar 14 09:16:03 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 22414|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 2335 bytes} [Thu Mar 14 09:16:38 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552554918.802341541&method=alipay.trade.page.pay.return&total_amount=9.90&sign=IHDr68%2F1lzsOgM9XRIpbjj4BhO0MeJgz9ULJyIuJ6LbObA1rKkW6vcL5dC%2F9W%2Bp4Z4QZWqKJ%2F9zN%2FSNgHCkwlBQSg%2FutuzVn8P5xtXMcBs1i2%2BWWWemFVvOdURWWrZ6Z6GnL3QMdMRuhX63ClFHyQPCj3yKs%2FyIwepBKnaSbhp496GTrWHUVjol%2BaSHDD1fLTTNxTfn76ukDqoDig%2FK2xKmy%2BIJy8UvWKe1%2FQmxVlTni5%2FL5gq55HR2qEfVQNzOqrmprXfPLyk4fpqzGXrFlsbkoEQdIH9gaXpBPqyr9Tk5WzLl69pFpFYnRyEZE1QJjUQfjdVHJfduJYPx%2Bjy9nvQ%3D%3D&trade_no=2019031422001445170500872164&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+17%3A16%3A10 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 22414|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 1000 bytes} [Thu Mar 14 09:16:38 2019] GET /axf/mine/ => generated 5695 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22414|app: 0|req: 7/7] 113.87.160.176 () {46 vars in 1031 bytes} [Thu Mar 14 09:17:22 2019] GET /axf/mine/ => generated 5695 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+1111
+[pid: 22414|app: 0|req: 8/8] 113.87.160.176 () {42 vars in 803 bytes} [Thu Mar 14 09:19:05 2019] GET /axf/appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+Not Found: /
+[pid: 22414|app: 0|req: 9/9] 146.255.92.174 () {32 vars in 447 bytes} [Thu Mar 14 09:21:46 2019] GET / => generated 2026 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 17:22:51 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1e714c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1e714c0 pid: 22457 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22457, cores: 2)
+[pid: 22457|app: 0|req: 1/1] 113.88.14.120 () {46 vars in 1030 bytes} [Thu Mar 14 09:22:59 2019] GET /axf/mine/ => generated 5695 bytes in 224 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 2/2] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:23:01 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 3/3] 113.88.14.120 () {48 vars in 953 bytes} [Thu Mar 14 09:23:05 2019] POST /axf/login/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 834 bytes} [Thu Mar 14 09:23:05 2019] GET /axf/mine/ => generated 5684 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 5/5] 113.88.14.120 () {44 vars in 837 bytes} [Thu Mar 14 09:23:07 2019] GET /axf/market/ => generated 11219 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 6/6] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:23:09 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:23:09 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:23:09 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 9/9] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:23:09 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:23:10 2019] GET /axf/cart/ => generated 3466 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 11/11] 113.88.14.120 () {44 vars in 851 bytes} [Thu Mar 14 09:23:11 2019] GET /axf/generateorder/ => generated 1546 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 12/12] 113.88.14.120 () {44 vars in 794 bytes} [Thu Mar 14 09:23:13 2019] GET /axf/pay/?orderid=16 => generated 963 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+Not Found: /
+[pid: 22457|app: 0|req: 13/13] 89.248.169.12 () {34 vars in 363 bytes} [Thu Mar 14 09:23:13 2019] GET / => generated 2011 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+支付完成
+[pid: 22457|app: 0|req: 14/14] 140.205.118.147 () {34 vars in 504 bytes} [Thu Mar 14 09:23:40 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 15/15] 113.88.14.120 () {44 vars in 2336 bytes} [Thu Mar 14 09:23:52 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552555391.71814014139&method=alipay.trade.page.pay.return&total_amount=4.00&sign=A9Bw%2BaFdR6vSfQkOKDiPTVRVX2zdQW6mOXXt1zT0c91my7x1i7%2FALVWMhXJRnyJfS9jutv7hJ9Cchj9SC3cMg0HQF8X5mbyXnU%2FcYFZjmxtbhvHprIIG7QVDFxhvhpJ7D0m2JcuJa8XyGbLjLcWJU7Apdk%2BA8FbcGm8LusFMYhCzQvTLiBg10%2FrJh%2FXzLqFS6zlJUNclvjoztWIW%2F3nZpNIOlutg8OxiEQ91B8uT%2BUSCGmrr2Di2V5JT%2B81ROgtccm0dhFDpmWPzjUiaidLU%2F7oIvupVWOFRsDgMmyhcSn7mBSPDWvMb8JeQIyDGb%2BMiTBMvI43TF4GFYvpUHPt%2BkQ%3D%3D&trade_no=2019031422001445170500872503&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+17%3A23%3A47 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 1005 bytes} [Thu Mar 14 09:23:52 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 17/17] 113.88.14.120 () {46 vars in 1036 bytes} [Thu Mar 14 09:24:51 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 18/18] 113.88.14.120 () {44 vars in 843 bytes} [Thu Mar 14 09:24:56 2019] GET /axf/orderlist/ => generated 3601 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 19/19] 113.88.14.120 () {44 vars in 838 bytes} [Thu Mar 14 09:25:00 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22457|app: 0|req: 20/20] 113.88.14.120 () {46 vars in 869 bytes} [Thu Mar 14 09:25:54 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22457|app: 0|req: 21/21] 113.88.14.120 () {46 vars in 869 bytes} [Thu Mar 14 09:25:58 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Mar 14 17:27:13 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/axf/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/axf
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8010 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x138b4c0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 83344 bytes (81 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x138b4c0 pid: 22491 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22491, cores: 2)
+[pid: 22491|app: 0|req: 1/1] 113.88.14.120 () {46 vars in 869 bytes} [Thu Mar 14 09:27:18 2019] GET /axf/mine/ => generated 5695 bytes in 223 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 2/2] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:27:20 2019] GET /axf/login/ => generated 3083 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 3/3] 113.88.14.120 () {48 vars in 953 bytes} [Thu Mar 14 09:27:24 2019] POST /axf/login/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 834 bytes} [Thu Mar 14 09:27:24 2019] GET /axf/mine/ => generated 5684 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 5/5] 113.88.14.120 () {44 vars in 837 bytes} [Thu Mar 14 09:27:33 2019] GET /axf/market/ => generated 11219 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 6/6] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:27:35 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:27:35 2019] GET /axf/addcart/?goodsid=496 => generated 177 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:27:36 2019] GET /axf/cart/ => generated 4364 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 9/9] 113.88.14.120 () {44 vars in 851 bytes} [Thu Mar 14 09:27:38 2019] GET /axf/generateorder/ => generated 1731 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 794 bytes} [Thu Mar 14 09:27:40 2019] GET /axf/pay/?orderid=17 => generated 969 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 11/11] 140.205.118.253 () {34 vars in 504 bytes} [Thu Mar 14 09:28:06 2019] POST /axf/appnotifyurl/ => generated 18 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 12/12] 113.88.14.120 () {44 vars in 2340 bytes} [Thu Mar 14 09:28:24 2019] GET /axf/returnurl/?charset=utf-8&out_trade_no=1552555658.89034085073&method=alipay.trade.page.pay.return&total_amount=9.90&sign=qOiILiMdp%2BKa2hsMOZ0Za4efOvH1x1Oc2dlmKvru%2FdR6vMnSmmLbUVIvT8Y7EyHElCPtVMhzDonI5ODB5lbYzcBGSbI6eWu1b9jnDwfTXX4ZJfOf2qqDE%2Fcp1tJapZq42h6dwzbnsi1ky0%2FyhVrCxCS4Scdko3SZhT2cvmIcRpjxeZl%2BvxuQBSd2n%2FbW1f%2FntbnuKROgfVDR7y5Ey8YsbV9Zu5u49Jd2tmlE4O9ii3MsLImLHA82zAie16TUzfV%2FMTa9LC79c8ySlf1PJr0TlIprJ7aHZvuECPM1YMGaw6SMk3pb00yWMQCd3PtfKyfg%2By9F66%2BbzcUVKac7XHojSw%3D%3D&trade_no=2019031422001445170500872504&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-14+17%3A28%3A12 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 13/13] 113.88.14.120 () {44 vars in 1017 bytes} [Thu Mar 14 09:28:24 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 14/14] 113.88.14.120 () {46 vars in 1048 bytes} [Thu Mar 14 09:29:25 2019] GET /axf/mine/ => generated 5684 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 15/15] 113.88.14.120 () {44 vars in 837 bytes} [Thu Mar 14 09:29:27 2019] GET /axf/market/ => generated 11219 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:29:28 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 17/17] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:29:30 2019] GET /axf/cart/ => generated 3467 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 18/18] 113.88.14.120 () {44 vars in 851 bytes} [Thu Mar 14 09:29:31 2019] GET /axf/generateorder/ => generated 1546 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 19/19] 113.88.14.120 () {44 vars in 842 bytes} [Thu Mar 14 09:29:33 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 20/20] 113.88.14.120 () {44 vars in 843 bytes} [Thu Mar 14 09:30:06 2019] GET /axf/orderlist/ => generated 4195 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 21/21] 113.88.14.120 () {44 vars in 898 bytes} [Thu Mar 14 09:30:12 2019] GET /axf/orderdetail/1552555771.71770838005/ => generated 1546 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 22/22] 113.88.14.120 () {44 vars in 863 bytes} [Thu Mar 14 09:30:13 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 23/23] 113.88.14.120 () {46 vars in 894 bytes} [Thu Mar 14 09:30:18 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 24/24] 113.88.14.120 () {44 vars in 837 bytes} [Thu Mar 14 09:30:45 2019] GET /axf/market/ => generated 11219 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 25/25] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:30:47 2019] GET /axf/addcart/?goodsid=495 => generated 139 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 26/26] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:30:48 2019] GET /axf/addcart/?goodsid=496 => generated 177 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 27/27] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:30:49 2019] GET /axf/addcart/?goodsid=497 => generated 144 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 28/28] 113.88.14.120 () {44 vars in 797 bytes} [Thu Mar 14 09:30:49 2019] GET /axf/addcart/?goodsid=497 => generated 144 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 29/29] 113.88.14.120 () {44 vars in 835 bytes} [Thu Mar 14 09:30:50 2019] GET /axf/cart/ => generated 5250 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 30/30] 113.88.14.120 () {44 vars in 807 bytes} [Thu Mar 14 09:30:53 2019] GET /axf/changecartall/?isall=false => generated 74 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 31/31] 113.88.14.120 () {44 vars in 809 bytes} [Thu Mar 14 09:30:54 2019] GET /axf/changecartselect/?cartid=12 => generated 78 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 32/32] 113.88.14.120 () {44 vars in 851 bytes} [Thu Mar 14 09:30:55 2019] GET /axf/generateorder/ => generated 1566 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 22491|app: 0|req: 33/33] 113.88.14.120 () {44 vars in 842 bytes} [Thu Mar 14 09:30:57 2019] GET /axf/mine/ => generated 5684 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 22491|app: 0|req: 34/34] 113.88.14.120 () {44 vars in 833 bytes} [Thu Mar 14 09:30:58 2019] GET /axf/mine/ => generated 5684 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)

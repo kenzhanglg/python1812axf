@@ -1,11 +1,15 @@
 import hashlib
 import random
 import time
+from urllib.parse import parse_qs
+
 from django.core.cache import cache
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
-from app.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, \
-    Goods, User, Cart, Order, OrderGoods
+from django.views.decorators.csrf import csrf_exempt
+
+from app.alipay import alipay
+from app.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, Goods, User, Cart, Order, OrderGoods
 
 
 def home(request):
@@ -108,10 +112,11 @@ def cart(request):
 def mine(request):
     token = request.session.get('token')
     userid = cache.get(token)
+
     response_data = {
         'user' : None,
-
     }
+
     if userid:
         user = User.objects.get(pk = userid)
         response_data['user'] = user
@@ -121,8 +126,7 @@ def mine(request):
         # 待发货
         response_data['paydone'] = orders.filter(status=1).count()
 
-    return render(request,'mine/mine.html',context={
-        'response_data':response_data})
+    return render(request,'mine/mine.html',context=response_data)
 
 def genrate_token():
     temp = str(time.time()) + str(random.random())
@@ -285,7 +289,7 @@ def changecartall(request):
     userid = cache.get(token)
     user = User.objects.get(pk=userid)
     carts = user.cart_set.all()
-    
+
     if isall == 'false':
         isall = False
     else:
@@ -316,6 +320,7 @@ def generateorder(request):
     order = Order()
     order.user = user
     order.identifier = genrate_identifier()
+    print(order.identifier)
     order.save()
 
     carts = user.cart_set.filter(isselect=True)
@@ -346,3 +351,57 @@ def orderdetail(request,identifier):
     order = Order.objects.filter(identifier=identifier).first()
     return render(request,'order/orderdetail.html',context={
         'order':order})
+
+
+def returnurl(request):
+    return redirect('axf:mine')
+
+#支付宝异步回调是post
+@csrf_exempt
+def appnotifyurl(request):
+    # print('支付完成')
+    if request.method == 'POST':
+        #获取到参数
+        body_str = request.body.decode('utf-8')
+        #通过 parse_qs函数
+        post_data = parse_qs(body_str)
+        #转换为字典
+        post_dic = {}
+        for k,v in post_data.items():
+            post_dic[k] = v[0]
+
+        #获取订单号
+        out_trade_no = post_dic['out_trade_no']
+
+        #更新状态
+        # order = Order.objects.filter(identifier=out_trade_no).first()
+        # order.status = 1
+        # order.save()
+        Order.objects.filter(identifier=out_trade_no).update(status=1)
+    print('支付完成')
+    return JsonResponse({'msg':'success'})
+
+
+def pay(request):
+    # print(request.GET.get('orderid'))
+    orderid = request.GET.get('orderid')
+    order = Order.objects.get(pk=orderid)
+    sum=0
+    for orderGoods in order.ordergoods_set.all():
+        sum += orderGoods.goods.price * orderGoods.number
+
+    #支付地址
+    data = alipay.direct_pay(
+        subject='MackBookPro [256G 8G 黑色]',#显示标题
+        out_trade_no=order.identifier, # 爱鲜峰订单号
+        total_amount=str(sum), #支付金额
+        return_url= 'http://47.112.107.146/axf/returnurl/',
+    )
+    alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=data)
+
+    response_data = {
+        'msg':'调用支付接口',
+        'alipayurl':alipay_url,
+        'status':1,
+    }
+    return JsonResponse(response_data)

@@ -6,8 +6,11 @@
 {% endblock %}
 
 {% block extcss %}
-
     <link rel="stylesheet" href="{% static 'mine/css/mine.css' %}">
+{% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'mine/js/mine.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -21,8 +24,9 @@
         <div class="user-content">
             <p>
                 <span class="glyphicon glyphicon-user"></span>
-                <a href="{% url 'axf:login' %}"
-                >{{ user.name | default:'未登陆' }}</a>
+                <a id="login-i">
+                    {{ user.name | default:'未登陆' }}
+                </a>
             </p>
             <p>
                 <span class="glyphicon glyphicon-th-list"></span>
@@ -41,7 +45,6 @@
     <div class="other">
         <section class="my">
             <span>我的订单</span>
-            <span class="badge">{{ waitpay }}</span>
             <a href="{% url 'axf:orderlist' %}">查看全部订单 <i
                     class="glyphicon
             glyphicon-chevron-right"></i></a>
@@ -137,6 +140,3 @@
 
 {% endblock %}
 
-{% block extjs %}
-    <script src="{% static 'mine/js/mine.js' %}"></script>
-{% endblock %}
